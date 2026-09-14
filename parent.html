@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - Ota-onalar Kabineti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen font-sans p-4 sm:p-6">
+
+    <div class="max-w-5xl mx-auto space-y-6">
+
+        <!-- Top Header -->
+        <header class="flex justify-between items-center bg-slate-800 p-5 rounded-2xl border border-slate-700 shadow-lg">
+            <div>
+                <h1 class="text-2xl font-bold text-emerald-400">EduQuest <span class="text-sm font-normal text-slate-400">| Ota-ona kabineti</span></h1>
+                <p class="text-xs text-slate-400 mt-0.5">Xush kelibsiz! Farzandingiz ta'lim jarayonini kuzatib boring.</p>
+            </div>
+            
+            <!-- KIRISH / CHIQISH TUGMASI -->
+            <a href="login.html" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition shadow-lg shadow-red-600/30 flex items-center gap-2">
+                <span>Tizimdan chiqish</span> 🚪
+            </a>
+        </header>
+
+        <!-- Student Profile Card (Yangi dizayn) -->
+        <section class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 shadow-xl space-y-6">
+            
+            <!-- Profil va Status -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-slate-700/60">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-indigo-500/30">
+                        JS
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 class="text-xl font-bold text-white">Jasurbek Salomxonov</h2>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-0.5 rounded-full border border-emerald-500/20 font-medium">Faol</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-0.5">Kodi: EQ-8923</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900/60 px-3.5 py-2 rounded-xl border border-slate-700/50 text-xs text-slate-300">
+                    <i class="fa-solid fa-graduation-cap text-indigo-400 mr-1.5"></i> Daraja: <b class="text-indigo-300">Level 5 (Bilimdon)</b>
+                </div>
+            </div>
+
+            <!-- Metrikalar (Kartochkalar) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Bajarilgan vazifalar -->
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50 relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-medium text-slate-400">Bajarilgan vazifalar</span>
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-white mb-2">85%</div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- O'rtacha ball -->
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50 relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-medium text-slate-400">O'rtacha ball</span>
+                        <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-white mb-2">90 <span class="text-xs text-slate-400 font-normal">/ 100</span></div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-amber-500 h-full rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Davomat -->
+                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700/50 relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-medium text-slate-400">Davomat</span>
+                        <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-white mb-2">100%</div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O'qituvchi Izohi -->
+            <div class="bg-indigo-950/30 border border-indigo-500/20 p-4 rounded-xl flex items-start gap-3">
+                <i class="fa-solid fa-comment-dots text-indigo-400 text-lg mt-0.5"></i>
+                <div class="text-xs leading-relaxed">
+                    <span class="font-bold text-indigo-300">O'qituvchi munosabati:</span> 
+                    <span class="text-slate-300">Jasurbek ushbu haftada darslarda juda faol qatnashdi. Barcha uy vazifalari va loyihalar o'z vaqtida bajarilmoqda.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task List Table -->
+        <section class="bg-slate-800 p-6 rounded-2xl border border-slate-700 space-y-4">
+            <h3 class="text-lg font-bold text-slate-200">So'nggi topshiriqlar va darslar</h3>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-slate-400 text-xs uppercase">
+                            <th class="py-3 px-2">Fan</th>
+                            <th class="py-3 px-2">Mavzu / Vazifa</th>
+                            <th class="py-3 px-2">Muddati</th>
+                            <th class="py-3 px-2">Holati</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700/50 text-sm">
+                        <tr>
+                            <td class="py-3.5 px-2 font-medium text-white">Ingliz tili</td>
+                            <td class="py-3.5 px-2 text-slate-300">Prepare Coursebook Unit 4 exercises</td>
+                            <td class="py-3.5 px-2 text-slate-400">Bugun, 18:00</td>
+                            <td class="py-3.5 px-2"><span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-md text-xs font-medium flex items-center gap-1 w-max"><i class="fa-solid fa-circle-check text-[10px]"></i> Bajarildi</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-2 font-medium text-white">Matematika</td>
+                            <td class="py-3.5 px-2 text-slate-300">Kvadrat tenglamalar (10-15 mashq)</td>
+                            <td class="py-3.5 px-2 text-slate-400">Ertaga, 12:00</td>
+                            <td class="py-3.5 px-2"><span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-md text-xs font-medium flex items-center gap-1 w-max"><i class="fa-solid fa-clock text-[10px]"></i> Kutilmoqda</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-2 font-medium text-white">Informatika</td>
+                            <td class="py-3.5 px-2 text-slate-300">HTML & CSS portfolio loyihasi</td>
+                            <td class="py-3.5 px-2 text-slate-400">14-Sentabr</td>
+                            <td class="py-3.5 px-2"><span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-md text-xs font-medium flex items-center gap-1 w-max"><i class="fa-solid fa-clock text-[10px]"></i> Kutilmoqda</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

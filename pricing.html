@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - Premium Tariflar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen py-10 px-4">
+
+    <!-- Header / Back Button -->
+    <div class="max-w-5xl mx-auto mb-10 flex justify-between items-center">
+        <a href="index.html" class="text-slate-400 hover:text-white text-sm flex items-center gap-2 transition">
+            <i class="fa-solid fa-arrow-left"></i> Asosiy sahifaga qaytish
+        </a>
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-800">EduQuest Monetization</span>
+    </div>
+
+    <!-- Title -->
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <h1 class="text-3xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">
+            O'qish va Nazoratni Osonlashtiring
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base">
+            O'quvchilar va Ota-onalar uchun mo'ljallangan maxsus imkoniyatlarni oching.
+        </p>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Free Plan -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+                <h3 class="text-lg font-bold text-slate-200">Bepul (Free)</h3>
+                <p class="text-xs text-slate-400 mt-1">Boshlang'ich rejalashtiruvchi</p>
+                <div class="my-6">
+                    <span class="text-4xl font-extrabold text-white">0</span>
+                    <span class="text-slate-400 text-sm"> so'm / abadiy</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-300 border-t border-slate-700/60 pt-4">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 5 tagacha dars jadvali</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 3 tagacha uy vazifasi</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Gamification (XP & Coin)</li>
+                    <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> Ota-ona kabineti</li>
+                    <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> Telegram Bildirishnomalar</li>
+                </ul>
+            </div>
+            <a href="index.html" class="mt-8 w-full bg-slate-700 hover:bg-slate-600 text-slate-200 font-semibold py-2.5 rounded-xl text-center text-sm transition">
+                Joriy Tarif
+            </a>
+        </div>
+
+        <!-- Student Pro (Popular) -->
+        <div class="bg-slate-800 border-2 border-indigo-500 rounded-2xl p-6 flex flex-col justify-between relative shadow-xl shadow-indigo-500/10">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider">
+                Eng Ommabop
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-indigo-400">O'quvchi Pro</h3>
+                <p class="text-xs text-slate-400 mt-1">Samaradorlikni oshirish uchun</p>
+                <div class="my-6">
+                    <span class="text-4xl font-extrabold text-white">19,000</span>
+                    <span class="text-slate-400 text-sm"> so'm / oy</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-300 border-t border-slate-700/60 pt-4">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Cheksiz dars va vazifalar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Pomodoro O'qish Rejimi</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Baholar va statistika kuzatuvi</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> AI Yordamchi Chat</li>
+                    <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> Ota-ona nazorati</li>
+                </ul>
+            </div>
+            <button onclick="alert('Payme/Click integratsiyasi yaqin orada qo\'shiladi!')" class="mt-8 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl text-center text-sm transition">
+                Pro'ga o'tish
+            </button>
+        </div>
+
+        <!-- Family / Parent Plan -->
+        <div class="bg-slate-800/80 border border-amber-500/60 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+                <h3 class="text-lg font-bold text-amber-400">Ota-ona & Oila</h3>
+                <p class="text-xs text-slate-400 mt-1">To'liq oilaviy nazorat</p>
+                <div class="my-6">
+                    <span class="text-4xl font-extrabold text-white">35,000</span>
+                    <span class="text-slate-400 text-sm"> so'm / oy</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-300 border-t border-slate-700/60 pt-4">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Barcha Pro funksiyalar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Ota-ona Dashboard kabineti</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Telegram orqali xabarnomalar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Davomat va baholar hisoboti</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> 3 tagacha farzandni ulash</li>
+                </ul>
+            </div>
+            <button onclick="alert('Ota-ona kabineti uchun sorov yuborildi!')" class="mt-8 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-2.5 rounded-xl text-center text-sm transition">
+                Family Olish
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>

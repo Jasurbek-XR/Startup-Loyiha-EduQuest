@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - Tizimga kirish</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4 font-sans">
+
+    <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 w-full max-w-md shadow-2xl space-y-6">
+        
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-indigo-400">EduQuest</h1>
+            <p class="text-slate-400 text-sm mt-1">Tizimga kirish uchun rolingizni tanlang</p>
+        </div>
+
+        <!-- Rol Tanlash -->
+        <div class="grid grid-cols-2 gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-700">
+            <button id="btnStudent" onclick="switchRole('student')" type="button" 
+                    class="py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white shadow">
+                👨‍🎓 O'quvchi
+            </button>
+            <button id="btnParent" onclick="switchRole('parent')" type="button" 
+                    class="py-2.5 rounded-lg text-sm font-medium transition text-slate-400 hover:text-white">
+                👨‍👩‍👧 Ota-ona
+            </button>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="hidden text-red-400 text-xs text-center bg-red-500/10 p-2 rounded-lg border border-red-500/20"></div>
+
+        <!-- Form -->
+        <form onsubmit="handleLogin(event)" class="space-y-4">
+            <div>
+                <label id="loginLabel" class="block text-sm font-medium text-slate-300 mb-1">O'quvchi kodi yoki Email</label>
+                <input type="text" id="username" required placeholder="Masalan: EQ-8923" 
+                       class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Parol</label>
+                <input type="password" id="password" required placeholder="••••••••" 
+                       class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+            </div>
+
+            <button type="submit" id="submitBtn" 
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-indigo-600/40 text-base cursor-pointer">
+                TIZIMGA KIRISH ➔
+            </button>
+        </form>
+
+    </div>
+
+    <script>
+        let currentRole = 'student';
+
+        function switchRole(role) {
+            currentRole = role;
+            const btnStudent = document.getElementById('btnStudent');
+            const btnParent = document.getElementById('btnParent');
+            const loginLabel = document.getElementById('loginLabel');
+            const usernameInput = document.getElementById('username');
+
+            if (role === 'student') {
+                btnStudent.className = "py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white shadow";
+                btnParent.className = "py-2.5 rounded-lg text-sm font-medium transition text-slate-400 hover:text-white";
+                loginLabel.innerText = "O'quvchi kodi yoki Email";
+                usernameInput.placeholder = "Masalan: EQ-8923";
+            } else {
+                btnParent.className = "py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white shadow";
+                btnStudent.className = "py-2.5 rounded-lg text-sm font-medium transition text-slate-400 hover:text-white";
+                loginLabel.innerText = "Ota-ona kodi yoki Telefon raqam";
+                usernameInput.placeholder = "Masalan: EQ-P782 yoki +998901234567";
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (username && password) {
+                localStorage.setItem('userRole', currentRole);
+                localStorage.setItem('username', username);
+
+                if (currentRole === 'student') {
+                    window.location.href = 'index.html'; 
+                } else {
+                    window.location.href = 'parent.html'; 
+                }
+            } else {
+                errorMessage.innerText = "Iltimos, barcha maydonlarni to'ldiring!";
+                errorMessage.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

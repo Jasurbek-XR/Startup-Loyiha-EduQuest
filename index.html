@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uz" class="bg-slate-900">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - O'quvchi Yordamchisi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Ikonkalar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen pb-10 m-0 p-0">
+
+    <!-- Premium Modal Pop-up -->
+    <div id="premiumModal"
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div
+            class="bg-slate-800 border border-amber-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl text-center space-y-4 relative">
+            <div
+                class="w-16 h-16 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center mx-auto text-3xl border border-amber-500/30">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Limitga yetdingiz!</h3>
+            <p id="modalText" class="text-slate-300 text-sm">Bepul tarifda cheklov mavjud.</p>
+            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <a href="pricing.html"
+                    class="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-2.5 rounded-xl text-sm transition shadow-lg shadow-orange-500/20">
+                    Tariflarni ko'rish
+                </a>
+                <button onclick="closePremiumModal()"
+                    class="bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium px-4 py-2.5 rounded-xl text-sm transition">
+                    Yopish
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-900/95 backdrop-blur border-b border-slate-800 sticky top-0 z-50 m-0 p-0">
+        <div class="max-w-6xl mx-auto px-4 py-2.5 flex flex-wrap justify-between items-center gap-3">
+
+            <!-- Logo va Nom -->
+            <div class="flex items-center space-x-3.5">
+                <div class="relative group">
+                    <img src="image.png" alt="EduQuest Logo"
+                        class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl shadow-md shadow-indigo-500/20 border border-indigo-500/40 bg-slate-900/80 p-1 transition-transform group-hover:scale-105">
+                </div>
+                <div class="flex flex-col">
+                    <h1
+                        class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent tracking-wide leading-none">
+                        EduQuest
+                    </h1>
+                    <span class="text-[10px] sm:text-xs text-slate-400 font-medium tracking-wider mt-0.5">O'QUVCHI YORDAMCHISI</span>
+                </div>
+            </div>
+
+            <!-- O'rtadagi Motivatsiya Bloki -->
+            <div id="welcomeBanner"
+                class="bg-slate-900/80 border border-slate-800 text-xs px-4 py-2 rounded-full text-slate-300">
+                🚀 <b>Xush kelibsiz!</b> Bugungi maqsadingiz sari yana bir qadam tashlang.
+            </div>
+
+            <!-- Operatsiyalar va Navigatsiya -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="hidden sm:flex items-center gap-2 text-xs sm:text-sm bg-slate-700/50 px-3 py-1.5 rounded-full border border-slate-600 shadow-inner">
+                    <i class="fa-regular fa-bell text-yellow-400 animate-pulse"></i>
+                    <span id="smartNotification">Navbatdagi dars: Matematika (09:00)</span>
+                </div>
+
+                <a href="pricing.html"
+                    class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-3 py-1.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 shadow-lg shadow-orange-500/20 transition">
+                    <i class="fa-solid fa-crown text-yellow-200"></i> Premium
+                </a>
+
+                <a href="login.html"
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3.5 py-1.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-1.5 shadow-md shadow-indigo-600/30">
+                    <i class="fa-solid fa-right-to-bracket"></i> Kirish
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 py-6 space-y-6">
+
+        <!-- Gamification Banner -->
+        <section class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-xl">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+
+                <!-- Streak va Tangalar -->
+                <div class="flex items-center justify-around sm:justify-start gap-6 bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                    <div class="flex items-center gap-2 font-extrabold text-orange-400 text-lg sm:text-xl">
+                        <i class="fa-solid fa-fire animate-bounce text-2xl"></i>
+                        <div>
+                            <span id="streakCount">1</span> kun
+                            <p class="text-[10px] text-slate-400 font-normal">Ketma-ketlik</p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-[1px] bg-slate-700"></div>
+                    <div class="flex items-center gap-2 font-extrabold text-yellow-400 text-lg sm:text-xl">
+                        <i class="fa-solid fa-coins text-2xl"></i>
+                        <div>
+                            <span id="coinCount">0</span>
+                            <p class="text-[10px] text-slate-400 font-normal">EduCoin</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level va Progress Bar -->
+                <div class="sm:col-span-2 bg-slate-900/60 p-3 sm:p-4 rounded-xl border border-slate-700/50 flex flex-col justify-center">
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span id="userLevel" class="text-indigo-400 font-bold text-base sm:text-lg">1-Level (Bilimdon)</span>
+                        <span id="xpText" class="text-slate-300 font-semibold text-xs sm:text-sm">0 / 200 XP</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-3.5 border border-slate-700 overflow-hidden p-0.5">
+                        <div id="xpBar" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Asosiy Bloklar Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Chap Kolonka -->
+            <section class="md:col-span-1 space-y-6">
+                <!-- Dars Jadvali -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <h2 class="text-lg font-bold mb-4 flex items-center gap-2 text-indigo-400">
+                        <i class="fa-solid fa-calendar-days"></i> Dars Jadvali
+                    </h2>
+                    <form id="scheduleForm" class="space-y-3 mb-4">
+                        <input type="text" id="subjectName" placeholder="Fan nomi (masalan: Matematika)" required
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                        <div class="flex gap-2">
+                            <input type="time" id="subjectTime" required
+                                class="w-1/2 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 text-white">
+                            <button type="submit"
+                                class="w-1/2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg text-sm transition">
+                                Qo'shish
+                            </button>
+                        </div>
+                    </form>
+                    <ul id="scheduleList" class="space-y-2 max-h-60 overflow-y-auto pr-1"></ul>
+                </div>
+
+                <!-- Pomodoro Taymer -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 text-center">
+                    <h2 class="text-lg font-bold mb-1 flex items-center justify-center gap-2 text-cyan-400">
+                        <i class="fa-solid fa-stopwatch"></i> Pomodoro O'qish Rejimi
+                    </h2>
+                    <p class="text-xs text-slate-400 mb-3">25 min dars (+10 Coin, +30 XP)</p>
+                    <div id="timerDisplay" class="text-4xl sm:text-5xl font-extrabold my-2 text-white tracking-widest font-mono">25:00</div>
+                    <div class="flex justify-center gap-2 mt-4">
+                        <button id="startTimerBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-medium transition">Boshlash</button>
+                        <button id="pauseTimerBtn" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-2 rounded-lg text-xs font-medium transition">Pauza</button>
+                        <button id="resetTimerBtn" class="bg-slate-700 hover:bg-slate-600 text-slate-300 px-3 py-2 rounded-lg text-xs font-medium transition">Qaytadan</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- O'rta & O'ng Kolonka -->
+            <section class="md:col-span-2 space-y-6">
+                <!-- Uy Vazifalari Tracker -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-bold flex items-center gap-2 text-emerald-400">
+                            <i class="fa-solid fa-list-check"></i> Uy Vazifalari Tracker
+                        </h2>
+                        <span id="hwStats" class="text-xs bg-slate-700 px-2.5 py-1 rounded-full text-slate-300">0/0 bajarildi</span>
+                    </div>
+                    <form id="hwForm" class="flex flex-col sm:flex-row gap-2 mb-4">
+                        <input type="text" id="hwTitle" placeholder="Uy vazifasi..." required
+                            class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                        <input type="date" id="hwDueDate" required
+                            class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 text-white">
+                        <button type="submit"
+                            class="bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-4 py-2 rounded-lg text-sm transition">
+                            Qo'shish
+                        </button>
+                    </form>
+                    <ul id="hwList" class="space-y-2 max-h-52 overflow-y-auto pr-1"></ul>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Baholar Kuzatuvi -->
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                        <h2 class="text-lg font-bold mb-3 flex items-center gap-2 text-yellow-400">
+                            <i class="fa-solid fa-chart-line"></i> Baholar Kuzatuvi
+                        </h2>
+                        <form id="gradeForm" class="flex gap-2 mb-3">
+                            <input type="text" id="gradeSubject" placeholder="Fan" required
+                                class="w-2/3 bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-yellow-500">
+                            <input type="number" id="gradeValue" placeholder="Baho" min="1" max="5" required
+                                class="w-1/3 bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-yellow-500">
+                            <button type="submit"
+                                class="bg-yellow-600 hover:bg-yellow-500 text-white px-3 py-1.5 rounded-lg text-sm">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </form>
+                        <div class="mb-3 text-sm font-semibold text-slate-300">
+                            O'rtacha ball: <span id="avgGrade" class="text-yellow-400">0.0</span>
+                        </div>
+                        <ul id="gradeList" class="space-y-2 max-h-36 overflow-y-auto text-sm pr-1"></ul>
+                    </div>
+
+                    <!-- Sinfdoshlar Doshtasi -->
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                        <h2 class="text-lg font-bold mb-3 flex items-center gap-2 text-purple-400">
+                            <i class="fa-solid fa-users text-purple-400"></i> Sinfdoshlar Doshtasi
+                        </h2>
+                        <form id="noteForm" class="space-y-2 mb-3">
+                            <input type="text" id="noteAuthor" placeholder="Ismingiz..." required
+                                class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-purple-500">
+                            <textarea id="noteText" placeholder="Eslatrangiz..." rows="2" required
+                                class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-purple-500"></textarea>
+                            <button type="submit"
+                                class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-1.5 rounded-lg text-sm transition">
+                                Ulashish
+                            </button>
+                        </form>
+                        <div id="noteList" class="space-y-2 max-h-32 overflow-y-auto text-xs pr-1"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- AI Assistant Floating Widget -->
+<div class="fixed bottom-5 right-5 z-40">
+    <!-- Chatni Ochish Tugmasi -->
+    <button id="aiToggleBtn" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-105 text-white p-4 rounded-full shadow-2xl transition flex items-center justify-center">
+        <i class="fa-solid fa-robot text-2xl"></i>
+    </button>
+
+    <!-- Chat Oynasi -->
+    <div id="aiChatBox" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[450px]">
+        <!-- Header -->
+        <div class="bg-slate-900 p-3.5 border-b border-slate-700 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-robot text-indigo-400 text-lg"></i>
+                <span class="font-bold text-sm text-white">EduQuest AI Yordamchi</span>
+            </div>
+            <button id="aiCloseBtn" class="text-slate-400 hover:text-white text-sm">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Chat Xabarlari Area -->
+        <div id="aiMessages" class="flex-1 p-3 overflow-y-auto space-y-3 text-xs">
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-700 text-slate-300">
+                👋 Salom! Men sizning shaxsiy AI yordamchingizman. Darslar yoki vazifalar bo'yicha savolingiz bo'lsa, so'rang!
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <form id="aiForm" class="p-2 bg-slate-900 border-t border-slate-700 flex gap-2">
+            <input type="text" id="aiInput" placeholder="Savolingizni yozing..." required
+                class="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-2 rounded-xl text-xs transition">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
